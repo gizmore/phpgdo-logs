@@ -1,0 +1,59 @@
+.gdo-logs-search {
+	display: flex;
+	gap: .5rem;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.gdo-logs-search input {
+	min-width: 16rem;
+	flex: 1;
+}
+
+.gdo-logs-columns {
+	display: flex;
+	gap: 1rem;
+	min-height: 28rem;
+}
+
+.gdo-logs-files {
+	flex: 0 0 28%;
+	max-height: 70vh;
+	overflow: auto;
+	border-right: 1px solid var(--bs-border-color, #ddd);
+	padding-right: 1rem;
+}
+
+.gdo-logs-files ul {
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+.gdo-logs-files input {
+	box-sizing: border-box;
+	margin: 0 0 .75rem;
+	width: 100%;
+}
+
+.gdo-logs-viewer {
+	min-width: 0;
+	flex: 1;
+}
+
+.gdo-logs-content {
+	max-height: 70vh;
+	overflow: auto;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+@media (max-width: 768px) {
+	.gdo-logs-columns { flex-direction: column; }
+	.gdo-logs-files {
+		flex-basis: auto;
+		max-height: 14rem;
+		border-right: 0;
+		border-bottom: 1px solid var(--bs-border-color, #ddd);
+		padding: 0 0 1rem;
+	}
+}
