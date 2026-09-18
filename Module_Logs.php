@@ -6,8 +6,8 @@ use GDO\Core\GDO_Module;
 use GDO\Core\GDT_Checkbox;
 use GDO\Date\GDT_Duration;
 use GDO\Mail\GDT_Email;
+use GDO\UI\GDT_Bar;
 use GDO\UI\GDT_Link;
-use GDO\UI\GDT_Page;
 use GDO\User\GDO_User;
 
 /**
@@ -83,12 +83,12 @@ final class Module_Logs extends GDO_Module
 		return GDO_PATH . 'protected/zipped';
 	}
 
-	public function onInitSidebar(): void
+	/** Add the personal log archive to the account-page navigation. */
+	public function hookAccountBar(GDT_Bar $bar): void
 	{
 		if (GDO_User::current()->isUser())
 		{
-			GDT_Page::instance()->rightBar()->addField(
-				GDT_Link::make('logs_overview')->href(href('Logs', 'Overview')));
+			$bar->addField(GDT_Link::make('logs_overview')->href(href('Logs', 'Overview')));
 		}
 	}
 
