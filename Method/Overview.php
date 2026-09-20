@@ -24,7 +24,7 @@ final class Overview extends Method
 
 	public function isCLI(): bool { return false; }
 
-	public function isShownInSitemap(): bool { return false; }
+	public function isShownInSitemap(): bool { return true; }
 
 	public function gdoParameters(): array
 	{

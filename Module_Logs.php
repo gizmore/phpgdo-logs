@@ -88,7 +88,7 @@ final class Module_Logs extends GDO_Module
 	{
 		if (GDO_User::current()->isUser())
 		{
-			$bar->addField(GDT_Link::make('logs_overview')->href(href('Logs', 'Overview')));
+			$bar->addField(GDT_Link::make('logs_overview')->href(href('Logs', 'Overview'))->icon('log'));
 		}
 	}
 
